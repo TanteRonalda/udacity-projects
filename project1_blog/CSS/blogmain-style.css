@@ -52,7 +52,7 @@ h1, h2, h3 {
       }
 
 
-    .header { /*nestedgrid*/
+    .title { /*nestedgrid*/
       display: grid;
       grid-area: hd;
       border-top: 5px solid Gainsboro;
