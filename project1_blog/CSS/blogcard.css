@@ -9,20 +9,20 @@
     }
 
     #elephants{
-      background: right/cover no-repeat url("images/elephants.jpg");
+      background: right/cover no-repeat url("Images/elephants.jpg");
     }
 
     #mountains{
-      background: right/cover no-repeat  url("images/mountains.jpg");
+      background: right/cover no-repeat  url("Images/mountains.jpg");
     }
     
     #berlin{
-      background: right/cover no-repeat url("images/berlin.jpg");
+      background: right/cover no-repeat url("Images/berlin.jpg");
 
     }
 
     #gangsters{
-      background: right/cover no-repeat url("images/peakyblinders.jpg");
+      background: right/cover no-repeat url("Images/peakyblinders.jpg");
     
     }
 

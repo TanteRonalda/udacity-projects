@@ -61,7 +61,7 @@ figure {
 
       #authoravatar{
         display:block;
-        background: top/100% no-repeat url("images/portrait.jpeg");
+        background: top/100% no-repeat url("Images/portrait.jpeg");
         border-radius: 50%;
         width: 100px;
         height: 100px;
@@ -77,25 +77,25 @@ figure {
 
 
   #blogpost-gangsters {
-    background: center 30%/cover no-repeat url("images/thomas-shelby.jpg");
+    background: center 30%/cover no-repeat url("Images/thomas-shelby.jpg");
     height:200px;
     width: auto;
   }
 
   #blogpost-berlin {
-    background: center/cover no-repeat url("images/berlin-2.jpg");
+    background: center/cover no-repeat url("Images/berlin-2.jpg");
     height:200px;
     width: auto;
   }
 
   #blogpost-mountains {
-    background: center/cover no-repeat url("images/mountains-2.jpg");
+    background: center/cover no-repeat url("Images/mountains-2.jpg");
     height:200px;
     width: auto;
   }
 
   #blogpost-elephant {
-    background: center/cover no-repeat url("images/elephant-2.jpg");
+    background: center/cover no-repeat url("Images/elephant-2.jpg");
     height:200px;
     width: auto;
   }
@@ -143,7 +143,7 @@ figure {
 
       #authoravatar{
         display: block;
-        background: top/100% no-repeat url("images/portrait.jpeg");
+        background: top/100% no-repeat url("Images/portrait.jpeg");
         border-radius: 50%;
         width: 80px;
         height: 80px;
