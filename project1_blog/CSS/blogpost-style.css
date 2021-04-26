@@ -36,6 +36,11 @@ figure {
     padding: 0px 20px 0px;
   }
 
+    .socialsharing {
+      display: inline-flex;
+      justify-content: flex-start;
+    }
+
 
   .sidebar {
     display:grid;
