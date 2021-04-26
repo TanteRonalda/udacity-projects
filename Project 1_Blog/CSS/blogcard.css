@@ -1,0 +1,28 @@
+
+.blogcard {
+      display:grid;
+      color: white;
+      padding: 10px 20px 10px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      text-shadow: 1px 1px 1px black
+    }
+
+    #elephants{
+      background: right/cover no-repeat url("images/elephants.jpg");
+    }
+
+    #mountains{
+      background: right/cover no-repeat  url("images/mountains.jpg");
+    }
+    
+    #berlin{
+      background: right/cover no-repeat url("images/berlin.jpg");
+
+    }
+
+    #gangsters{
+      background: right/cover no-repeat url("images/peakyblinders.jpg");
+    
+    }
+
