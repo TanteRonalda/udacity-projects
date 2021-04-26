@@ -1,25 +1,25 @@
 figure {
-  display:table;
-  text-align:center;
-  margin:10px 0 10px;
+  display: table;
+  text-align: center;
+  margin: 10px 0 10px;
 }
 
   figcaption {
-    display:table-caption;
-    caption-side:bottom;
-    color:grey;
-    font-style:italic;
-    font-size:smaller;
-    padding:5px 0 0;
+    display: table-caption;
+    caption-side: bottom;
+    color: grey;
+    font-style: italic;
+    font-size: smaller;
+    padding: 5px 0 0;
   }
 
 
 .wrapperpost {
-  display:grid;
-  grid-gap:10px;
-  margin:10px;
-  grid-template-rows:50px auto 1fr;
-  grid-template-columns:minmax(100px, auto);
+  display: grid;
+  grid-gap: 10px;
+  margin: 10px;
+  grid-template-rows: 50px auto 1fr;
+  grid-template-columns: minmax(100px, auto);
   grid-template-areas:
   "tb tb tb"
   "hd hd hd"
@@ -28,92 +28,92 @@ figure {
 }  
 
   .blogpost {
-    display:grid;
-    grid-area:post;
-    border-left:5px solid Gainsboro;
-    justify-content:center;
-    align-items:center;
-    padding:0 20px 0;
+    display: grid;
+    grid-area: post;
+    border-left: 5px solid Gainsboro;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 0;
   }
 
     .socialsharing {
-      display:inline-flex;
-      justify-content:flex-start;
-      align-items:center;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
     }
 
 
   .sidebar {
-    display:grid;
-    grid-area:sb;
-    grid-gap:10px;
-    grid-template-rows:5% 5% 10%;
-    padding:0 20px 0;
+    display: grid;
+    grid-area: sb;
+    grid-gap: 10px;
+    grid-template-rows: 5% 5% 10%;
+    padding: 0 20px 0;
     background-color: CornflowerBlue;
-    border-radius:5px;
+    border-radius: 5px;
   }
 
     .sidebaritem {
-      display:flex;
-      justify-content:center;
+      display: flex;
+      justify-content: center;
     }
 
       #authorinfo {
-        display:block;
-        color:white;
-        padding:0 0 10px ;
-        font-size:14px;
+        display: block;
+        color: white;
+        padding: 0 0 10px ;
+        font-size: 14px;
       }
 
       #authoravatar {
-        display:block;
-        background:top/100% no-repeat url("Images/portrait.jpeg");
+        display: block;
+        background: top/100% no-repeat url("Images/portrait.jpeg");
         border-radius: 50%;
-        width:100px;
-        height:100px;
-        margin:15px 15px;
+        width: 100px;
+        height: 100px;
+        margin: 15px 15px;
       }
 
       #list {
-        display:block;
+        display: block;
         color: white;
-        text-align:left;
-        text-decoration:underline; 
+        text-align: left;
+        text-decoration: underline; 
       }
 
 /*blogpost*/
       #blogpost-gangsters {
-        background:center 30%/cover no-repeat url("Images/thomas-shelby.jpg");
-        height:200px;
-        width:auto;
+        background: center 30%/cover no-repeat url("Images/thomas-shelby.jpg");
+        height: 200px;
+        width: auto;
       }
 
       #blogpost-berlin {
-        background:center/cover no-repeat url("Images/berlin-2.jpg");
-        height:200px;
-        width:auto;
+        background: center/cover no-repeat url("Images/berlin-2.jpg");
+        height: 200px;
+        width: auto;
       }
 
       #blogpost-mountains {
-        background:center/cover no-repeat url("Images/mountains-2.jpg");
-        height:200px;
-        width:auto;
+        background: center/cover no-repeat url("Images/mountains-2.jpg");
+        height: 200px;
+        width: auto;
       }
 
       #blogpost-elephant {
-        background:center/cover no-repeat url("Images/elephant-2.jpg");
-        height:200px;
-        width:auto;
+        background: center/cover no-repeat url("Images/elephant-2.jpg");
+        height: 200px;
+        width: auto;
       }
 
 
 @media (max-width:700px) {
 
   .wrapperpost {
-    display:grid;
-    margin:10px;
-    grid-template-rows:50px auto 200px 1fr;
-    grid-template-columns:minmax(100px, auto);
+    display: grid;
+    margin: 10px;
+    grid-template-rows: 50px auto 200px 1fr;
+    grid-template-columns: minmax(100px, auto);
     grid-template-areas:
     "tb tb tb"
     "hd hd hd"
@@ -123,42 +123,42 @@ figure {
   }
 
   .sidebar {
-    display:grid;
-    grid-area:sb;
-    grid-template-columns:25% 40% 35%;
-    grid-template-rows:100%;
+    display: grid;
+    grid-area: sb;
+    grid-template-columns: 25% 40% 35%;
+    grid-template-rows: 100%;
     background-color: CornflowerBlue;
-    justify-content:center;
-    align-items:center;
-    border-radius:5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
   }
 
     .sidebaritem {
-      display:flex;
-      flex-direction:row;
-      margin:5px;
-      justify-content:center;
-      align-items:center;
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+      justify-content: center;
+      align-items: center;
     }
 
       #authorinfo {
-        display:inline;
-        color:white;
-        padding-top:10px;
+        display: inline;
+        color: white;
+        padding-top: 10px;
       }
 
       #authoravatar {
-        display:block;
-        background:top/100% no-repeat url("Images/portrait.jpeg");
-        border-radius:50%;
-        width:80px;
-        height:80px;
+        display: block;
+        background: top/100% no-repeat url("Images/portrait.jpeg");
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
       }
 
       #list {
-        display:inline;
+        display: inline;
         color: white;
-        font-size:14px;
+        font-size: 14px;
         
       }
 }

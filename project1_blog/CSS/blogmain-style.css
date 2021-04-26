@@ -9,27 +9,26 @@ body {
 }
 
 div,p, ul {
-  font-family:"open sans", sans-serif;
+  font-family: "open sans", sans-serif;
 }
 
 a {
-  text-decoration:none;
-  cursor:pointer;
+  text-decoration: none;
+  cursor: pointer;
   color: white;
-  background-color: CornflowerBlue;
 }
 
 h1, h2, h3 {
-  font-family:'Acme', sans-serif;
-  text-decoration:none;
+  font-family: 'Acme', sans-serif;
+  text-decoration: none;
 }
 
   .wrappermain {
-    display:grid;
-    grid-gap:10px;
-    margin:10px;
-    grid-template-rows:50px auto 1fr;
-    grid-template-columns:minmax(100px, auto);
+    display: grid;
+    grid-gap: 10px;
+    margin: 10px;
+    grid-template-rows: 50px auto 1fr;
+    grid-template-columns: minmax(100px, auto);
     grid-template-areas:
     "tb tb"
     "hd hd"
@@ -39,62 +38,62 @@ h1, h2, h3 {
 
     .topbar { /*nestedgrid*/
       grid-area: tb;
-      display:inline-flex;
+      display: inline-flex;
       justify-content: space-between;
     }
 
       #topbaritem {
-        color:CornflowerBlue;
-        font-family:'Acme', sans-serif;
-        align-items:center;
-        justify-content:center;
-        padding:15px 10px 10px;
-        font-size:20px;
+        color: CornflowerBlue;
+        font-family: 'Acme', sans-serif;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 10px 10px;
+        font-size: 20px;
       }
 
 
     .header { /*nestedgrid*/
-      display:grid;
-      grid-area:hd;
-      border-top:5px solid Gainsboro;
-      border-bottom:5px solid Gainsboro;
+      display: grid;
+      grid-area: hd;
+      border-top: 5px solid Gainsboro;
+      border-bottom: 5px solid Gainsboro;
     }
 
     .headerimage {
-      font-size:40px;
-      line-height:85px;
+      font-size: 40px;
+      line-height: 85px;
     }
 
       #blogtitel {
         color: CornflowerBlue;
-        text-align:center;
+        text-align: center;
       }
 
     .content {/*nestedgrid*/
       display: grid;
-      grid-area:ct;
-      grid-gap:10px;
-      grid-template-rows:repeat(2, 50%);
-      grid-template-columns:repeat(2, 50%); 
+      grid-area: ct;
+      grid-gap: 10px;
+      grid-template-rows: repeat(2, 50%);
+      grid-template-columns: repeat(2, 50%); 
     }
       
     .footer {
-      grid-area:ft;
+      grid-area: ft;
       color: CornflowerBlue;
-      text-align:right;
-      margin-top:10px;
-      font-family:'Acme', sans-serif;
+      text-align: right;
+      margin-top: 10px;
+      font-family: 'Acme', sans-serif;
     }
 
 
 @media (max-width:700px) {
 
 .wrappermain {
-  display:grid;
-  grid-gap:10px;
-  margin:10px;
-  grid-template-rows:50px auto 1fr;
-  grid-template-columns:minmax(100px, auto);
+  display: grid;
+  grid-gap: 10px;
+  margin: 10px;
+  grid-template-rows: 50px auto 1fr;
+  grid-template-columns: minmax(100px, auto);
   grid-template-areas:
   "tb"
   "hd"
@@ -103,25 +102,25 @@ h1, h2, h3 {
 }  
 
   .content {
-    display:grid;
-    grid-area:ct;
-    grid-gap:10px;
-    grid-template-rows:repeat(4, 25%);
-    grid-template-columns:100%;
+    display: grid;
+    grid-area: ct;
+    grid-gap: 10px;
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: 100%;
   }
 
   .headerimage {
-    display:inline-flex;
-    justify-content:center;
-    font-size:40px;
-    line-height:85px;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 40px;
+    line-height: 85px;
   }
 
     #topbaritem {
       color:CornflowerBlue;
-      align-items:center;
-      justify-content:center;
-      padding:15px 10px 10px;
-      font-size:15px;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 10px 10px;
+      font-size: 15px;
     }
 }
