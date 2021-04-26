@@ -19,7 +19,7 @@ figure {
   grid-gap:10px;
   margin:10px;
   grid-template-rows:50px auto 1fr;
-  grid-template-columns:minmax(100px, auto));
+  grid-template-columns:minmax(100px, auto);
   grid-template-areas:
   "tb tb tb"
   "hd hd hd"
@@ -32,7 +32,7 @@ figure {
     grid-area: post;
     border-left: 5px solid Gainsboro;
     justify-content:center;
-    align items:center;
+    align-items:center;
     padding: 0px 20px 0px;
   }
 
@@ -107,7 +107,7 @@ figure {
     display:grid;
     margin:10px;
     grid-template-rows:50px auto 200px 1fr;
-    grid-template-columns:minmax(100px, auto));
+    grid-template-columns:minmax(100px, auto);
     grid-template-areas:
     "tb tb tb"
     "hd hd hd"
@@ -155,8 +155,7 @@ figure {
         font-size: 14px;
         
       }
-
-
+}
 
 
 
