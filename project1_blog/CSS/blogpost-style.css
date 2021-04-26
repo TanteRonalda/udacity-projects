@@ -13,19 +13,18 @@ figure {
     padding: 5px 0 0;
   }
 
-
-.wrapperpost {
-  display: grid;
-  grid-gap: 10px;
-  margin: 10px;
-  grid-template-rows: 50px auto 1fr;
-  grid-template-columns: minmax(100px, auto);
-  grid-template-areas:
-  "tb tb tb"
-  "hd hd hd"
-  "sb post post"
-  "ft ft ft";
-}  
+  .wrapperpost {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 50px auto 200px 1fr;
+    grid-template-columns: minmax(100px, auto);
+    grid-template-areas:
+    "tb tb tb"
+    "hd hd hd"
+    "sb sb sb"
+    "post post post"
+    "ft ft ft";
+  }
 
   .blogpost {
     display: grid;
@@ -34,6 +33,7 @@ figure {
     justify-content: center;
     align-items: center;
     padding: 0 20px 0;
+    font-size: 14px;
   }
 
     .socialsharing {
@@ -42,44 +42,46 @@ figure {
       align-items: center;
     }
 
-
   .sidebar {
     display: grid;
     grid-area: sb;
-    grid-gap: 10px;
-    grid-template-rows: 5% 5% 10%;
-    padding: 0 20px 0;
+    grid-template-columns: 25% 40% 35%;
+    grid-template-rows: 100%;
     background-color: CornflowerBlue;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
+    padding-left: 10px;
   }
 
-    .sidebaritem {
-      display: flex;
-      justify-content: center;
+  .sidebaritem {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+    #authorinfo {
+      display: inline;
+      color: white;
+      padding-top: 10px;
+      font-size: 14px;
     }
 
-      #authorinfo {
-        display: block;
-        color: white;
-        padding: 0 0 10px ;
-        font-size: 14px;
-      }
+    #authoravatar {
+      display: block;
+      background: top/100% no-repeat url("Images/portrait.jpeg");
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
 
-      #authoravatar {
-        display: block;
-        background: top/100% no-repeat url("Images/portrait.jpeg");
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        margin: 15px 15px;
-      }
-
-      #list {
-        display: block;
-        color: white;
-        text-align: left;
-        text-decoration: underline; 
-      }
+    #list {
+      display: inline;
+      color: white;
+      font-size: 14px;      
+    }
 
 /*blogpost*/
       #blogpost-gangsters {
@@ -107,59 +109,59 @@ figure {
       }
 
 
-@media (max-width:700px) {
+@media (min-width:600px) {
 
   .wrapperpost {
     display: grid;
-    margin: 10px;
-    grid-template-rows: 50px auto 200px 1fr;
+    grid-gap: 10px;
+    grid-template-rows: 50px auto 1fr;
     grid-template-columns: minmax(100px, auto);
     grid-template-areas:
     "tb tb tb"
     "hd hd hd"
-    "sb sb sb"
-    "post post post"
+    "sb post post"
     "ft ft ft";
-  }
+  }  
 
   .sidebar {
     display: grid;
     grid-area: sb;
-    grid-template-columns: 25% 40% 35%;
-    grid-template-rows: 100%;
+    grid-gap: 5px;
+    grid-template-rows: 5% 10% 10%;
+    grid-template-columns: 100%;
+    padding: 20px 20px 0;
     background-color: CornflowerBlue;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
+    align-items: center;
   }
 
     .sidebaritem {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       margin: 5px;
-      justify-content: center;
-      align-items: center;
     }
 
       #authorinfo {
-        display: inline;
+        display: block;
         color: white;
-        padding-top: 10px;
+        padding: 20px 0 10px ;
+        font-size: 14px;
       }
 
       #authoravatar {
         display: block;
         background: top/100% no-repeat url("Images/portrait.jpeg");
         border-radius: 50%;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
+        margin: 15px 15px;
       }
 
       #list {
-        display: inline;
+        display: block;
         color: white;
-        font-size: 14px;
-        
+        text-align: left;
+        text-decoration: underline; 
       }
 }
 
