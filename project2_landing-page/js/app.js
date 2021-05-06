@@ -18,7 +18,6 @@
  * 
 */
 
-
 /**
  * End Global Variables
  * Start Helper Functions
@@ -34,6 +33,17 @@
 */
 
 // build the nav
+/*function dynamicNavigation() {*/
+    const section = document.querySelectorAll("section");
+    const navList = document.getElementById("navbar__list");
+    
+    /*for(let i = 0; i > section.length; i++) {*/
+        const navItem = document.createElement("li");
+    
+        navList.appendChild(navItem);
+
+
+    
 
 
 // Add class 'active' to section when near top of viewport
