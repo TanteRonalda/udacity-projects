@@ -31,16 +31,21 @@
  * Begin Main Functions
  * 
 */
-
+document.addEventListener('DOMContentLoaded', dynamicNavigation);
 // build the nav
-/*function dynamicNavigation() {*/
-    const section = document.querySelectorAll("section");
+function dynamicNavigation() {
     const navList = document.getElementById("navbar__list");
-    
-    /*for(let i = 0; i > section.length; i++) {*/
+    const section = document.querySelectorAll("section");
+    for(let i = 0; i < section.length; i++) {
         const navItem = document.createElement("li");
-    
+        navItem.innerText = section[i].getAttribute("data-nav");
+        const anchor = document.createElement("a");
+        anchor.setAttribute("href", "#"+section[i].id);
         navList.appendChild(navItem);
+        navItem.appendChild(anchor);
+    };
+}
+    
 
 
     
