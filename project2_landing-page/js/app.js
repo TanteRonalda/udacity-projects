@@ -66,7 +66,6 @@ function dynamicNavigation() {
 
 // Set sections as active
 function addActiveClass () {
-    const navList = document.getElementById("navbar__list");
     const navItems = document.querySelectorAll("li");
         for(let i = 0; i < navItems.length; i++) {
             navItems[i].addEventListener("click", function() {
