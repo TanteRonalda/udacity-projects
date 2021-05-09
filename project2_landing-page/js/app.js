@@ -31,8 +31,13 @@
  * Begin Main Functions
  * 
 */
-document.addEventListener("DOMContentLoaded", dynamicNavigation);
-document.addEventListener("DOMContentLoaded", addActiveClass);
+
+
+
+window.addEventListener("DOMContentLoaded", dynamicNavigation);
+window.addEventListener("DOMContentLoaded", addActiveClass);
+
+
 
 // build the nav
 function dynamicNavigation() {
