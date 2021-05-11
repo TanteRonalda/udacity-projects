@@ -59,20 +59,20 @@ function dynamicNavigation() {
 
 
 function isInViewport () {
-    const container = document.querySelectorAll(".landing__container");
-    for (let i = 0; i < container.length; i++) {
-        const containerInView = container[i].getBoundingClientRect();
-        window.addEventListener("scroll", function () {
-            if  (containerInView.top >= 0 
+    window.addEventListener("scroll", function () {
+        const container = document.getElementsByClassName("landing__container");
+        for (let i = 0; i < container.length; i++) {
+            const containerInView = container[i].getBoundingClientRect();
+                if  (containerInView.top >= 0 
                 &&  containerInView.left >= 0
                 &&  containerInView.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-                &&  containerInView.right <= (window.innerWidth || document.documentElement.clientWidth));
+                &&  containerInView.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
             { 
-                container[i].classList.add("your-active-class");
+                container[i].classList.toggle("your-active-class");
             }
-            container[i].classList.remove("your-active-class");
-        });
-    };    
+        };
+    });    
 }
 
 
