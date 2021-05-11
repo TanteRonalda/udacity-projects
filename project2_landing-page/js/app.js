@@ -59,23 +59,33 @@ function dynamicNavigation() {
 
 
 function isInViewport () {
-    const sectionInView = document.querySelectorAll("landing__container");
-    window.addEventListener("scroll", function () {
-        isInViewportHelp(sectionInView) ?
-        sectioninView.className("your-active-class") :
-        sectioninView.className("");
-    })
+    const container = document.querySelectorAll(".landing__container");
+    for (let i = 0; i < container.length; i++) {
+        const containerInView = container[i].getBoundingClientRect();
+        window.addEventListener("scroll", function () {
+            if  (containerInView.top >= 0 
+                &&  containerInView.left >= 0
+                &&  containerInView.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                &&  containerInView.right <= (window.innerWidth || document.documentElement.clientWidth));
+            { 
+                container[i].classList.add("your-active-class");
+            }
+            container[i].classList.remove("your-active-class");
+        });
+    };    
 }
 
-function isInViewportHelp(element) {
-    const visibility = element.getBoundingClientRect();
+
+
+/*function isInViewportHelper(element) {
+     const rect = element.getBoundingClientRect();
     return (
         rect.top >= 0 
     &&  rect.left >= 0
     &&  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
     &&  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
-}
+}*/
 
 
 // Scroll to anchor ID using scrollTO event
