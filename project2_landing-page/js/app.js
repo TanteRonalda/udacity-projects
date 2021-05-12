@@ -53,6 +53,20 @@ function dynamicNavigation() {
     addActiveClassClick();
 }  
 // Add class 'active' to section when near top of viewport
+//ALTERNATIVE
+/*const contentSections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", function() {
+    for(sectionInView of contentSections) {
+        if (sectionInView.getBoundingClientRect().top < window.innerHeight)
+        {
+            sectionInView.classList.add("your-active-class");
+        } 
+        else 
+        sectionInView.classList.remove("your-active-class");
+    }
+})*/
+
 
 function isInViewport(e) {
     let rect = e.getBoundingClientRect();
@@ -67,10 +81,11 @@ function isInViewport(e) {
 const contentSections = document.querySelectorAll("section");
 
 function viewportClass() {
-    for (let i = 0; i < contentSections.length; i++) {
-        if  (isInViewport(contentSections[i]) === true) {
-            contentSections[i].classList.add("your-active-class");
-        } else contentSections[i].classList.remove("your-active-class");
+    for (viewedSection of contentSections) {
+        if  (isInViewport(viewedSection) === true) {
+            viewedSection.className = "in-view";
+
+        } else viewedSection.classList.remove("in-view");
     };
 }
 
@@ -78,7 +93,8 @@ document.addEventListener("scroll", function(){
     viewportClass();
 });
 
-
+const navItems = document.querySelectorAll("li");
+    
 
 
 // Scroll to anchor ID using scrollTO event
@@ -117,10 +133,11 @@ function addActiveClassClick () {
             });
         };
 }
-
+  
 /*function addActiveClassInView () {
     const navItems = document.querySelectorAll("li");
-        for(let i = 0; i < navItems.length; i++) {
+        for(navItemViewedSection of navItems) {
+            if (isInViewport())
             navItems[i].addEventListener("click", function() {
                 const activeItem = document.getElementsByClassName("active");
                     if (activeItem.length > 0){
