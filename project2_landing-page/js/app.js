@@ -34,8 +34,7 @@
 
 
 
-window.addEventListener("DOMContentLoaded", isInViewport);
-window.addEventListener("DOMContentLoaded", dynamicNavigation);
+window.onload = dynamicNavigation;
 
 // build the nav
 function dynamicNavigation() {
@@ -56,7 +55,7 @@ function dynamicNavigation() {
 // Add class 'active' to section when near top of viewport
 
 function isInViewport(e) {
-    let rect = e.target.getBoundingClientRect();
+    let rect = e.getBoundingClientRect();
     return (
        rect.top >= 0 
    &&  rect.left >= 0
@@ -65,13 +64,13 @@ function isInViewport(e) {
    );
 };
 
-const container = document.getElementsByClassName("landing__container");
+const contentSections = document.querySelectorAll("section");
 
 function viewportClass() {
-    for (let i = 0; i < container.length; i++) {
-        if  (isInViewport(container[i]) === true) {
-            container[i].classList.add("your-active-class");
-        }
+    for (let i = 0; i < contentSections.length; i++) {
+        if  (isInViewport(contentSections[i]) === true) {
+            contentSections[i].classList.add("your-active-class");
+        } else contentSections[i].classList.remove("your-active-class");
     };
 }
 
@@ -110,9 +109,9 @@ function addActiveClassClick () {
     const navItems = document.querySelectorAll("li");
         for(let i = 0; i < navItems.length; i++) {
             navItems[i].addEventListener("click", function() {
-                const activeItem = document.getElementsByClassName("active");
-                    if (activeItem.length > 0){
-                        activeItem[0].className = activeItem[0].className.replace("active", "");
+            const activeItem = document.getElementsByClassName("active");
+                if (activeItem.length > 0){
+                    activeItem[0].className = activeItem[0].className.replace("active", "");
                     }
                     this.className = "active";
             });
