@@ -88,25 +88,14 @@ section {
     padding: 20px;
 }
 
-.active, .navbar__menu li:hover {
+.active, .navbar__menu {
     display: inline-block;
     text-decoration: underline;
     padding: 20px;
 }
 
-.navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-}
 
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
-    transition: ease 0.3s all;
-}
+
 
 /* Header Styles */
 .page__header {
