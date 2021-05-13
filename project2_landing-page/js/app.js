@@ -1,42 +1,6 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
-
-/**
- * Define Global Variables
- * 
-*/
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-
-
 window.onload = dynamicNavigation;
 
-// build the nav
+// Dynamically build the navigation menu
 function dynamicNavigation() {
     const section = document.querySelectorAll("section");
     const navList = document.getElementById("navbar__list");
@@ -52,22 +16,22 @@ function dynamicNavigation() {
     scrollingSmoothly();
     addActiveClassClick();
 }  
+
+// Set navigation-items as active when they are clicked
+function addActiveClassClick () {
+    const navItems = document.querySelectorAll("li");
+        for(let i = 0; i < navItems.length; i++) {
+            navItems[i].addEventListener("click", function() {
+            const activeItem = document.getElementsByClassName("active");
+                if (activeItem.length > 0){
+                    activeItem[0].className = activeItem[0].className.replace("active", "");
+                    }
+                    this.className = "active";
+            });
+        };
+}
+
 // Add class 'active' to section when near top of viewport
-//ALTERNATIVE
-/*const contentSections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", function() {
-    for(sectionInView of contentSections) {
-        if (sectionInView.getBoundingClientRect().top < window.innerHeight)
-        {
-            sectionInView.classList.add("your-active-class");
-        } 
-        else 
-        sectionInView.classList.remove("your-active-class");
-    }
-})*/
-
-
 function isInViewport(e) {
     let rect = e.getBoundingClientRect();
     return (
@@ -94,19 +58,6 @@ document.addEventListener("scroll", function(){
 });
 
 const navItems = document.querySelectorAll("li");
-    
-
-
-// Scroll to anchor ID using scrollTO event
-    
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
 
 // Scroll to section on link click  
 function scrollingSmoothly() {
@@ -120,32 +71,7 @@ function scrollingSmoothly() {
         document.querySelector(clickedAnchorLink).scrollIntoView({behavior:"smooth"});
     }; 
 }
-// Set sections as active
-function addActiveClassClick () {
-    const navItems = document.querySelectorAll("li");
-        for(let i = 0; i < navItems.length; i++) {
-            navItems[i].addEventListener("click", function() {
-            const activeItem = document.getElementsByClassName("active");
-                if (activeItem.length > 0){
-                    activeItem[0].className = activeItem[0].className.replace("active", "");
-                    }
-                    this.className = "active";
-            });
-        };
-}
-  
-/*function addActiveClassInView () {
-    const navItems = document.querySelectorAll("li");
-        for(navItemViewedSection of navItems) {
-            if (isInViewport())
-            navItems[i].addEventListener("click", function() {
-                const activeItem = document.getElementsByClassName("active");
-                    if (activeItem.length > 0){
-                        activeItem[0].className = activeItem[0].className.replace("active", "");
-                    }
-                    this.className = "active";
-            });
-        };
-}*/
+
+
 
 
