@@ -11,4 +11,3 @@ To start off Udacity provided a static version of a Landing Page, that had to be
 - if a section is in viewport, that section is highlighted (background color changes) and the correspponding sections gets assigned the class "in-view". When it's no longer in viewport, the class is removed.
 - When clicking an item in the navigation menu, the page scrolls to the corresponding section
 
-The code was written by Hanna Grube.
