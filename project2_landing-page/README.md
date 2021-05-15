@@ -13,7 +13,7 @@ To start off Udacity provided a static version of a Landing Page, that had to be
 
 ## Warning of plagiarism
 
- would like to address the “first warning of plagiarism”, that I received after my latest submission. 
+I would like to address the “first warning of plagiarism”, that I received after my latest submission. 
 
 I understand, that Udacity takes plagiarism very seriously and that copying another student’s work is inacceptable. 
 
