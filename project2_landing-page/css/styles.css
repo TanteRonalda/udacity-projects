@@ -10,6 +10,12 @@
 
 
 /* ---- Base Rules ---- */
+
+/* How I would rather add scrolling behavior to the page:
+ html {
+    scroll-behavior: smooth;
+}*/
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -73,18 +79,31 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    align-items: flex-start;
     padding-left: 10px;    
 
 }
 
 .navbar__menu li {
-    display: inline;
+    display: inline-flex;
     justify-content: space-between;
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
     padding: 10px;
     margin: 5px;
+}
+
+@media (max-width: 500px) {
+    .navbar__menu ul {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        font-size: 15px;
+
+    }
+
+    .navbar_menu li {
+        display: block;
+    }
 }
 
 .active, .navbar__menu {
@@ -141,11 +160,6 @@ section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right; 
-}
-
-.your-active-class{
-    background: rgb(136,203,171);
-
 }
 
 /* Background Circles */
@@ -212,17 +226,17 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+.landing__container.your-active-class {
     background: rgb(0, 0, 0);
     background: rgba(227, 103, 238, 0.187);
 }
 
-section.your-active-class .landing__container::before {
+.landing__container.your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+.landing__container.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
