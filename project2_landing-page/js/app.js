@@ -1,125 +1,91 @@
-window.onload = dynamicNavigation;
+/**
+ * 
+ * Manipulating the DOM exercise.
+ * Exercise programmatically builds navigation,
+ * scrolls to anchors from navigation,
+ * and highlights section in viewport upon scrolling.
+ * 
+ * Dependencies: None
+ * 
+ * JS Version: ES2015/ES6
+ * 
+ * JS Standard: ESlint
+ * 
+*/
 
-// Dynamically build the navigation menu
+/**
+ * Define Global Variables
+ * 
+*/
+const sections = document.querySelectorAll("section");
+const navList = document.getElementById("navbar__list");
+
+// Set up navigation Menu for all sections in the document
 function dynamicNavigation() {
-    const sections = document.querySelectorAll("section");
-    const navList = document.getElementById("navbar__list");
+    // loop over NodeList of sections
     for(section of sections) {
+        // create new list Item and a tag for each section that is found
         const navItem = document.createElement("li"); 
         const anchor = document.createElement("a");
+        // get the data nav Attribute from the section to become the name of the navItem 
         anchor.innerText = section.getAttribute("data-nav");
-        anchor.setAttribute("id", section.id);
+        navItem.className = section.getAttribute("id");      
         anchor.setAttribute("href", "#"+section.id);
+        // insert the newly created elements inside after their parent elements
         navList.appendChild(navItem);
         navItem.appendChild(anchor);
     };
     scrollingSmoothly();
+    addActiveClassClick();
 }  
-
-
 // Set navigation-items as active when they are clicked
-// How this is done ist very well explained here: https://www.w3schools.com/howto/howto_js_active_element.asp 
+// This function is derived from www.w3schools.com
 function addActiveClassClick () {
     const navItems = document.querySelectorAll("li");
-    for(let i = 0; i < navItems.length; i++) {
-        navItems[i].addEventListener("click", function() {
-            const activeItem = document.getElementsByClassName("active");
+    const activeItem = document.getElementsByClassName("active");
+    for(clickedNavItem of navItems) {
+        clickedNavItem.addEventListener("click", function() {
             if (activeItem.length > 0)
             {
-                activeItem[0].className = activeItem[0].className.replace("active", "");
+                activeItem[0].classList.remove("active");
             } 
-            this.className = "active";
+            this.classList.add("active");
             });
         };
 }
 
-
-/*function addActiveClassClick () {
-    const navBar = document.querySelector("ul");
-        navBar.addEventListener("click", function ActivateNavItem(activeItem) {
-            const navItems = navBar.querySelectorAll("li");
-            for (navItem of navItems){
-                if (activeItem.target.nodeName === "LI") 
-                {   
-                navItem.ClassList.add("active");
-                }
-            }    
-            
-        });
-}
-
-/*function ActivateNavItem () {}
-    const anchorLinks = document.querySelectorAll("li a");
-    for (anchorLink of anchorLinks)
-        anchorLink.addEventlistener("click", function (activItem) {
-        if (activeItem.tagrget.nodeName === "A") 
-    {
-        anchorLink.className = "active"
-    }
-}
-
-(activeItem) {
-    for (navItem of navItems) {
-        if (navItem.target === true )
-        {
-            navitem.className = "active";
-        }
-   }
-}
-
-navBar.addEventListener("click", ActivateNavItem);
-*/
-
 // Add class 'active' to section when near top of viewport
 function viewPortClass () {
-    const contentSections = document.querySelectorAll(".landing__container");
-    for (section of contentSections) {
+    for (section of sections) {
         const viewedSection = section.getBoundingClientRect();
-        //To check the dimensions of viewedSection I have used a helper function, that can be found on multiple online sources, for example: https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
+        //the following helper function was given at www.javascripttutorial.net
             if  (viewedSection.top >= 0 
                 &&  viewedSection.left >= 0
                 &&  viewedSection.bottom <= (window.innerHeight || document.documentElement.clientHeight)
                 &&  viewedSection.right <= (window.innerWidth || document.documentElement.clientWidth)) 
             { 
                 section.classList.add("your-active-class");
+                //Is this how I can access the corresponding list item?
+                /*document.querySelector([li section.getAttribute("id")]).classList.add("active-nav-item");*/
             } 
-            else section.classList.remove("your-active-class",);
+            else { 
+                section.classList.remove("your-active-class");
+                /*document.querySelector([li section.getAttribute("id")]).classList.remove("active-nav-item");*/
+            }
+
             
     };
-};    
+}; 
+
 
 document.addEventListener("scroll", function() {
-     viewPortClass();
+    viewPortClass();
 });
-
-/*//Highlight Item in Navigation when appropriate section is in Viewport
-function highlightNav () {
-    const contentSections = document.querySelectorAll("section");
-    const NavItem = document.querySelectorAll("li a")
-    for (section of contentSections) {
-        const viewedSection = section.getBoundingClientRect();
-        //To check the dimensions of viewedSection I have used a helper function, that can be found on multiple online sources, for example: https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
-            if  ((viewedSection.top >= 0 
-                &&  viewedSection.left >= 0
-                &&  viewedSection.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-                &&  viewedSection.right <= (window.innerWidth || document.documentElement.clientWidth)) && (viewedSection.id == viewedNavItem.id))
-            { 
-                section.classList.add("your-active-class");
-                viewedNavItem.style.background = "red";
-            } 
-            else section.classList.remove("your-active-class",);
-            
-    };
-};    
-
-document.addEventListener("scroll", function() {
-     highlightNav();
-});*/
 
 // Scroll to section on link click
 // I would prefer to create this effect with CSS, but I believe it is required to be a JS function for this  project
 function scrollingSmoothly() {
-    const anchorLinks = document.querySelectorAll("li a");
+    const anchorLinks = document.querySelectorAll("ul li a");
     for (const anchorLink of anchorLinks){
         anchorLink.addEventListener("click", ScrollToSection);
     }
@@ -129,3 +95,7 @@ function scrollingSmoothly() {
         document.querySelector(clickedAnchorLink).scrollIntoView({behavior:"smooth"});
     }; 
 };
+
+//Build navigation
+window.onload = dynamicNavigation;
+
