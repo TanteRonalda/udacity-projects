@@ -2,7 +2,7 @@
 
 ## Important note
 This repository was solely created for the submission & review process at Udacity.
-If you wish to review the commits and history of this project please go to my [this folder in my other repository](https://github.com/TanteRonalda/udacity-projects/tree/main/project2_landing-page), where this project was orginally developed.
+If you wish to review the commits and history of this project please go to [this folder in my other repository](https://github.com/TanteRonalda/udacity-projects/tree/main/project2_landing-page), where this project was orginally developed.
 
 (I am still figuring out GitHub and wasn't aware that you were supposed to create a new repository for each project. I thought they could all be stored in one)
 
