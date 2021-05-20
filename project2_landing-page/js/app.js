@@ -15,7 +15,6 @@
 
 /**
  * Define Global Variables
- * 
 */
 const sections = document.querySelectorAll("section");
 const navList = document.getElementById("navbar__list");
@@ -35,13 +34,12 @@ function dynamicNavigation() {
         navList.appendChild(navItem);
         navItem.appendChild(anchor);
     };
-    scrollingSmoothly();
-    addActiveClassClick();
-}  
+} 
+ 
 // Set navigation-items as active when they are clicked
 // This function is derived from www.w3schools.com
 function addActiveClassClick () {
-    const navItems = document.querySelectorAll("li");
+    const navItems = document.querySelectorAll("#navbar__list li");
     const activeItem = document.getElementsByClassName("active");
     for(clickedNavItem of navItems) {
         clickedNavItem.addEventListener("click", function() {
@@ -49,9 +47,9 @@ function addActiveClassClick () {
             {
                 activeItem[0].classList.remove("active");
             } 
-            this.classList.add("active");
-            });
-        };
+                this.classList.add("active");
+        });
+    };
 }
 
 // Add class 'active' to section when near top of viewport
@@ -59,33 +57,30 @@ function viewPortClass () {
     for (section of sections) {
         const viewedSection = section.getBoundingClientRect();
         //the following helper function was given at www.javascripttutorial.net
-            if  (viewedSection.top >= 0 
-                &&  viewedSection.left >= 0
-                &&  viewedSection.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-                &&  viewedSection.right <= (window.innerWidth || document.documentElement.clientWidth)) 
+        if  (viewedSection.top >= 0 
+            &&  viewedSection.left >= 0
+            &&  viewedSection.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            &&  viewedSection.right <= (window.innerWidth || document.documentElement.clientWidth)) 
             { 
+                // add class name to section and corresponding list item
                 section.classList.add("your-active-class");
-                //Is this how I can access the corresponding list item?
-                /*document.querySelector([li section.getAttribute("id")]).classList.add("active-nav-item");*/
+                document.querySelector("#navbar__list li." + section.getAttribute("id")).classList.add("active-nav-item");
             } 
             else { 
+                // remove class name from section and corresponding list item
                 section.classList.remove("your-active-class");
-                /*document.querySelector([li section.getAttribute("id")]).classList.remove("active-nav-item");*/
+                document.querySelector("#navbar__list li." + section.getAttribute("id")).classList.remove("active-nav-item");
             }
-
-            
     };
-}; 
-
+};
 
 document.addEventListener("scroll", function() {
     viewPortClass();
 });
 
 // Scroll to section on link click
-// I would prefer to create this effect with CSS, but I believe it is required to be a JS function for this  project
 function scrollingSmoothly() {
-    const anchorLinks = document.querySelectorAll("ul li a");
+    const anchorLinks = document.querySelectorAll("#navbar__list li a");
     for (const anchorLink of anchorLinks){
         anchorLink.addEventListener("click", ScrollToSection);
     }
@@ -96,6 +91,8 @@ function scrollingSmoothly() {
     }; 
 };
 
-//Build navigation
+//Build navigation 
 window.onload = dynamicNavigation;
+scrollingSmoothly();
+addActiveClassClick();
 
