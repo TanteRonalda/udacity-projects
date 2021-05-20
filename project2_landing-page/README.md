@@ -4,27 +4,18 @@
 
 To start off Udacity provided a static version of a Landing Page, that had to be converted into an interactive one. This required modifying the HTML and CSS files, but primarily the JavaScript file.
 
-## Functionality
+## Behavior
 
-- the navigation menu at the top is built dynamically as more sections are added. For testing purposes, a fourth section was here added as required by the rubric
-- if an item in the navigation menu is clicked, the corresponding HTML list item gets assigned the class "active". When a different item is clicked, the class is removed.
-- if a section is in viewport, that section is highlighted (background color changes) and the correspponding sections gets assigned the class "in-view". When it's no longer in viewport, the class is removed.
-- When clicking an item in the navigation menu, the page scrolls to the corresponding section
+- navigation menu is dynamically build according to the number of sections in the document
+- click on navigation item smooth-scrolls to corresponding section
+- sections are highlighted when in viewport
+- the navigation item of a section is also highlighted when that section is in viewport
+
+## Methods
+
+To achieve this behavior a variety of JS methods were used, such as for of loops, conditionals, functions and eventListeners for click and scroll.
 
 ## Warning of plagiarism
 
-I would like to address the “first warning of plagiarism”, that I received after my latest submission. 
-
-I understand, that Udacity takes plagiarism very seriously and that copying another student’s work is inacceptable. 
-
-When working on my project, I have looked at an amount of other peoples code because going through their code is helping me a lot with understanding, how different problems can be addressed and solved.
-
-I would like to point out though, that I HAVE NOT copied code form any source.
-
-The repository  https://github.com/akristic/landing-page which is stated to be my main potential source in the plagiarism warning, I have NEVER opened before. Comparing the two now, I do see the similarities in the logic of some functions but I don't find it justified to say that I have copied the entire scope. 
-
-As for the second potential source mentioned https://github.com/musaabhasan/fend2, I have also NEVER opened this one, however the user is familiar because because he posted in the Help Forum about his issues with his code to check whether a section is in viewport. I was having similar problems (which I also posted about in the Help Forum). I think I may have drawn a little too heavy on the code he posted with his question to fix mine, so that they ended up looking very much alike.
-
--> That particular function I have now reworked and cited the source of the helper function.
-
--> I have also included a lot more comments in the code.
+Thanks for not finding me guilty of plagiarism after all... 
+I take this programm very seriously and fully understand that copying some elses code is not getting me anywhere. Going through other peoples code is nice to get a deeper understanding of theall the possibilities that there are to solve a problem, but
